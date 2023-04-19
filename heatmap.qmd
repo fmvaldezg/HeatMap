@@ -13,6 +13,7 @@ jupyter: python3
 #| fig-cap: "A heatmap of PCW installations"
 
 # !pip install leafmap geopandas pycrs osmnx
+filepoints = "https://raw.githubusercontent.com/fmvaldezg/HeatMap/main/heatmap_files/hubs.csv"
 
 import os
 import leafmap.foliumap as leafmap
@@ -26,9 +27,9 @@ m = leafmap.Map(
     measure_control=False,
     fullscreen_control=False,
     )
-in_csv = "/Users/felipevaldez/Library/CloudStorage/OneDrive-TempleUniversity/Work in Progress/Leafmap/heatmap_files/hubs.csv"
+
 m.add_heatmap(
-    in_csv,
+    filepoints,
     latitude="lat",
     longitude='lon',
     value="value",
